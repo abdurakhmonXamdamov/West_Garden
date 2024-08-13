@@ -1,0 +1,142 @@
+
+@mixin backdrop-filter($filters...) {
+    -webkit-backdrop-filter: $filters;
+    backdrop-filter: $filters;
+}
+
+@mixin style_card($bg_color, $border_color, $text_color, $paragraph){
+    background: $bg_color;
+
+    span{
+        border: 4px solid $border_color;
+    }
+
+    .options__tex{
+        color: $text_color;
+
+        p{
+            color: $paragraph;
+        }
+    }
+}
+
+@mixin style__desk($bg_color, $color_indent, $title_color, $table_color, $size,$color_li, $border_top, $book_tex, $color_btn, $color_btn_tex){
+
+   background: $bg_color;
+
+   .adds__indent{
+        color: $color_indent;
+   }
+
+    .adds__title{
+        color: $title_color;
+    }
+
+    .adds__table{
+        color: $table_color;
+        font-size: $size;
+
+        li{
+            color: $color_li;
+        }
+    }
+
+   .adds__book{
+    border-top: 1px solid $border_top;
+
+        &_tex{
+            color: $book_tex;
+            
+            span{
+                color: $book_tex;
+            }
+        }
+    }
+        button:last-child{
+            background-color: $color_btn;
+            color: $color_btn_tex;
+        }
+}
+
+
+
+@mixin bg_color($bg_color, $radius){
+    background-color: $bg_color;
+    border-radius: $radius;
+
+}
+
+%flex-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+%flex-between{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+%flex-start{
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+%flex-end{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+%items-center{
+    display: flex;
+    align-items: center;
+}
+
+%justify-between{
+    display: flex;
+    justify-content: space-between;
+}
+
+%justify-center{
+    display: flex;
+    justify-content: center;
+}
+
+%facility{
+    font-size: 16px;
+    font-family: 'tt-medium';
+    letter-spacing: -2%;
+}
+
+%flex-col{
+    display: flex;
+    flex-direction: column;
+}
+
+%btns{
+    border-radius: 5px;
+    color: #fff;
+    @include backdrop-filter(blur(20px));
+    border: 0;
+    outline: 0;
+    background-color: rgba($color: #000000, $alpha: 0.6);
+    cursor: pointer;
+}
+
+%titles{
+    font-family: 'tt-bold';
+    font-size: 56px;
+    letter-spacing: -3px;
+    margin-bottom: 48px;
+}
+
+%button{
+    border: 0;
+    outline: 0;
+    border-radius: 12px;
+    background: unset;
+    padding: 16px;
+}
